@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
-
 public class User {
     public String id;
     public String name;
@@ -18,27 +17,44 @@ public class User {
         this.consumptionList = new LinkedList<>();
     }
 
-    public String getId() { return id; }
-    public String getName() { return name; }
-    public int getAge() { return age; }
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
 
     public void addConsumption(LocalDate startDate, LocalDate endDate, double amount) {
         consumptionList.add(new Consumption(startDate, endDate, amount));
     }
 
     public double getTotalConsumption(LocalDate startDate, LocalDate endDate) {
-        return consumptionList.stream()
-                .filter(c -> (c.getStartDate().isBefore(endDate) || c.getStartDate().isEqual(endDate)) &&
-                        (c.getEndDate().isAfter(startDate) || c.getEndDate().isEqual(startDate)))
-                .mapToDouble(c -> {
-                    LocalDate overlapStart = startDate.isAfter(c.getStartDate()) ? startDate : c.getStartDate();
-                    LocalDate overlapEnd = endDate.isBefore(c.getEndDate()) ? endDate : c.getEndDate();
-                    long daysBetween = overlapEnd.toEpochDay() - overlapStart.toEpochDay() + 1;
-                    long totalDays = c.getEndDate().toEpochDay() - c.getStartDate().toEpochDay() + 1;
-                    double dailyAmount = c.getAmount() / totalDays;
-                    return dailyAmount * daysBetween;
-                })
-                .sum();
+        double totalConsumption = 0.0;
+
+        for (Consumption c : consumptionList) {
+
+            if ((c.getStartDate().isBefore(endDate) || c.getStartDate().isEqual(endDate)) &&
+                    (c.getEndDate().isAfter(startDate) || c.getEndDate().isEqual(startDate))) {
+
+                LocalDate StartOfPeriod = startDate.isAfter(c.getStartDate()) ? startDate : c.getStartDate();
+                LocalDate EndOfPeriod = endDate.isBefore(c.getEndDate()) ? endDate : c.getEndDate();
+
+                long daysBetween = EndOfPeriod.toEpochDay() - StartOfPeriod.toEpochDay() + 1;
+
+                long totalDays = c.getEndDate().toEpochDay() - c.getStartDate().toEpochDay() + 1;
+
+                double dailyAmount = c.getAmount() / totalDays;
+
+                totalConsumption += dailyAmount * daysBetween;
+            }
+        }
+
+        return totalConsumption;
     }
 
     public double getDailyConsumption(LocalDate date) {
@@ -52,8 +68,9 @@ public class User {
     }
 
     public double getMonthlyConsumption(int year, int month) {
+
         LocalDate startOfMonth = LocalDate.of(year, month, 1);
-        LocalDate endOfMonth = startOfMonth.withDayOfMonth(startOfMonth.lengthOfMonth());
+        LocalDate endOfMonth = startOfMonth.plusMonths(1).minusDays(1);
         return getTotalConsumption(startOfMonth, endOfMonth);
     }
 

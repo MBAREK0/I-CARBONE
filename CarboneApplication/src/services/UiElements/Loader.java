@@ -17,7 +17,7 @@ public class Loader {
 
                 // Update spinner index
                 spinnerIndex = (spinnerIndex + 1) % spinner.length;
-                if( i == iterations - 2) {
+                if( i == iterations - 1) {
                     spinner[spinnerIndex] = ' ';
                 }
                 // Pause to create animation effect

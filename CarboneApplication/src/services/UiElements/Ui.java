@@ -32,12 +32,12 @@ public class Ui {
     }
 
     public void displayMenu2() {
-        System.out.println();
-        System.out.println("\t\t\t\t\t\t\t M   M  EEEEE  N   N  U   U                                                                    ");
-        System.out.println("\t\t\t\t\t\t\t MM MM  E      NN  N  U   U                                                                    ");
-        System.out.println("\t\t\t\t\t\t\t M M M  EEEE   N N N  U   U                                                                    ");
-        System.out.println("\t\t\t\t\t\t\t M   M  E      N  NN  U   U                                                                    ");
-        System.out.println("\t\t\t\t\t\t\t M   M  EEEEE  N   N   UUU                                                                     ");
+      
+        System.out.println("\t\t\t\t\t\t\t M   M  EEEEE  N   N  U   U");
+        System.out.println("\t\t\t\t\t\t\t MM MM  E      NN  N  U   U");
+        System.out.println("\t\t\t\t\t\t\t M M M  EEEE   N N N  U   U");
+        System.out.println("\t\t\t\t\t\t\t M   M  E      N  NN  U   U");
+        System.out.println("\t\t\t\t\t\t\t M   M  EEEEE  N   N   UUU ");
         System.out.println();
         System.out.println("\t\t _______________________________________________________________________________________________________ ");
         System.out.println("\t\t|                                                                                                       |");

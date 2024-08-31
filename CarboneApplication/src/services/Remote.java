@@ -87,9 +87,13 @@ public class Remote {
         int age = scanner.nextInt();
         scanner.nextLine(); 
 
-        User user = new User(id, name, age);
-        users.put(id, user);
-        System.out.println("\n\t\t| Account created successfully |");
+        if(age < 0 || age > 120)
+            System.out.println("\n\t\t| Account creation failed. Please enter a valid age |");
+        else{
+            User user = new User(id, name, age);
+            users.put(id, user);
+            System.out.println("\n\t\t| Account created successfully |");
+        }
     }
 
     private static void updateAccount() {
@@ -104,11 +108,15 @@ public class Remote {
 
         User user = users.get(id);
         if (user != null) {
-            user.name = newName;
-            user.age = newAge;
-            System.out.println("\n\t\t| Account updated successfully |");
-            
 
+            if(newAge < 0 || newAge > 120)
+                 System.out.println("\n\t\t| Account creation failed. Please enter a valid age |");
+            else {
+                user.name = newName;
+                user.age = newAge;
+                System.out.println("\n\t\t| Account updated successfully |");
+            }
+            
         } else {
             System.out.println("\n\t\t| User not found |");
         }
