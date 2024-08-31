@@ -15,7 +15,7 @@ public class Main {
         System.out.print("\n\n\n\t\ti-carbone@guest:~$ ");
 
         int choice = scanner.nextInt();
-        scanner.nextLine(); // consume the newline
+        scanner.nextLine(); 
 
 
             switch (choice) {
@@ -23,14 +23,11 @@ public class Main {
                     remote();
                     break;
                 case 0:
-                    System.out.println("Exiting...");
+                    System.out.println("\n\t\tExiting...");
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.out.println("\n\t\tInvalid choice. Please try again.");
                     break;
-
-
-
 
         }
     }
@@ -40,7 +37,7 @@ public class Main {
     }
 
     public static void remote() {
-        loading(); // This will call the loading spinner
-        Remote.main(null); // This will only be called after loading() completes
+        loading(); 
+        Remote.main(null); 
     }
 }

@@ -1,10 +1,9 @@
 package services;
 
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
+
 
 public class User {
     public String id;
@@ -66,6 +65,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "ID: " + id + ", Name: " + name + ", Age: " + age;
+        return "ID: " + id + "| Name: " + name + "| Age: " + age;
     }
 }
