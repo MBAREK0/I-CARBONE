@@ -13,7 +13,7 @@ public class Loader {
             System.out.println("\n\n\n\n");
             for (int i = 0; i < iterations; i++) {
                 // Print spinner character and use \r to overwrite the line
-                System.out.print("\r\t\t\t\t\t\t\t\t\t" + spinner[spinnerIndex]);
+                System.out.print("\r\t\t\t\t\t\t\t\t   " + spinner[spinnerIndex]);
 
                 // Update spinner index
                 spinnerIndex = (spinnerIndex + 1) % spinner.length;

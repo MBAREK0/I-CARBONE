@@ -12,7 +12,7 @@ public class Main {
         Ui ui = new Ui();
         ui.displayMenu();
 
-        System.out.print("\n\n\n\t\ti-carbone@guest:~$ ");
+        System.out.print("\n\n\n\t\ti@carbone:~$ ");
 
         int choice = scanner.nextInt();
         scanner.nextLine(); 

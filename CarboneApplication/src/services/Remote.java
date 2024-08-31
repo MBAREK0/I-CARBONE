@@ -25,7 +25,7 @@ public class Remote {
                 isMenu = false;
             }
 
-            System.out.print("\n\n\n\t\ti-carbone@guest:~$ ");
+            System.out.print("\n\n\n\t\ti@carbone:~$ ");
             int choice = scanner.nextInt();
             scanner.nextLine(); 
 
@@ -85,7 +85,7 @@ public class Remote {
         String name = scanner.nextLine();
         System.out.print("\t\tEnter Age: ");
         int age = scanner.nextInt();
-        scanner.nextLine(); // consume the newline
+        scanner.nextLine(); 
 
         User user = new User(id, name, age);
         users.put(id, user);
@@ -93,6 +93,7 @@ public class Remote {
     }
 
     private static void updateAccount() {
+        System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user to update: ");
         String id = scanner.nextLine();
         System.out.print("\t\tEnter new Name: ");
@@ -114,6 +115,7 @@ public class Remote {
     }
 
     private static void deleteAccount() {
+        System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user to delete: ");
         String id = scanner.nextLine();
 
@@ -125,6 +127,7 @@ public class Remote {
     }
 
     private static void displayUserInfo() {
+        System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user to display: ");
         String id = scanner.nextLine();
 
@@ -136,11 +139,12 @@ public class Remote {
         }
     }
 
-     // -------------------------------------------------------------
+    // -------------------------------------------------------------
     //                 ✨ Carbon Consumption Methods
     // -------------------------------------------------------------
 
     private static void addCarbonConsumption() {
+        System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user: ");
         String id = scanner.nextLine();
         System.out.print("\t\tEnter amount of carbon consumption to add: ");
@@ -163,6 +167,7 @@ public class Remote {
     }
 
     private static void displayTotalConsumptionForPeriod() {
+        System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user: ");
         String id = scanner.nextLine();
         System.out.print("\t\tEnter start date (yyyy-MM-dd): ");
@@ -183,6 +188,7 @@ public class Remote {
     }
 
     private static void displayDailyCarbonConsumption() {
+        System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user: ");
         String id = scanner.nextLine();
         System.out.print("\t\tEnter date (yyyy-MM-dd): ");
@@ -199,6 +205,7 @@ public class Remote {
     }
 
     private static void displayWeeklyCarbonConsumption() {
+        System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user: ");
         String id = scanner.nextLine();
         System.out.print("\t\tEnter year: ");
@@ -217,13 +224,14 @@ public class Remote {
     }
 
     private static void displayMonthlyCarbonConsumption() {
+        System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user: ");
         String id = scanner.nextLine();
         System.out.print("\t\tEnter year: ");
         int year = scanner.nextInt();
         System.out.print("\t\tEnter month (1-12): ");
         int month = scanner.nextInt();
-        scanner.nextLine(); // consume the newline
+        scanner.nextLine(); 
 
         User user = users.get(id);
         if (user != null) {
@@ -235,6 +243,7 @@ public class Remote {
     }
 
     private static void displayYearlyCarbonConsumption() {
+        System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user: ");
         String id = scanner.nextLine();
         System.out.print("\t\tEnter year: ");

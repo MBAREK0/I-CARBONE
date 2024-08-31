@@ -1,9 +1,7 @@
 package services.UiElements;
 
 public class Ui {
-    public Ui() {
-    }
-
+    
     public void displayMenu() {
         System.out.println();    System.out.println();    System.out.println();
 
@@ -25,20 +23,21 @@ public class Ui {
         System.out.println("                                        --------------------------------------------------      ");
         System.out.println("                                                       W E L C O M E   B A C K");
         System.out.println("                                        --------------------------------------------------      ");
+
         System.out.println("              I-CARBONE is a company that develops a console application in Java to help users measure,track, and analyze" +
                            "                                    their carbon footprint. The company's goal is to raise awareness about the environmental " +
                            "                                                      impacts of consumption habits and encourage more eco-friendly behaviors.");
         System.out.println();    System.out.println();
-        System.out.println("                                         0. EXIT                                   1. NEXT ");
+        System.out.println("                                         0. EXIT                                   1. NEXT      ");
     }
 
     public void displayMenu2() {
         System.out.println();
-        System.out.println("\t\t\t\t\t\t\t  M   M  EEEEE  N   N  U   U");
-        System.out.println("\t\t\t\t\t\t\t  MM MM  E      NN  N  U   U");
-        System.out.println("\t\t\t\t\t\t\t  M M M  EEEE   N N N  U   U");
-        System.out.println("\t\t\t\t\t\t\t  M   M  E      N  NN  U   U");
-        System.out.println("\t\t\t\t\t\t\t  M   M  EEEEE  N   N   UUU ");
+        System.out.println("\t\t\t\t\t\t\t M   M  EEEEE  N   N  U   U                                                                    ");
+        System.out.println("\t\t\t\t\t\t\t MM MM  E      NN  N  U   U                                                                    ");
+        System.out.println("\t\t\t\t\t\t\t M M M  EEEE   N N N  U   U                                                                    ");
+        System.out.println("\t\t\t\t\t\t\t M   M  E      N  NN  U   U                                                                    ");
+        System.out.println("\t\t\t\t\t\t\t M   M  EEEEE  N   N   UUU                                                                     ");
         System.out.println();
         System.out.println("\t\t _______________________________________________________________________________________________________ ");
         System.out.println("\t\t|                                                                                                       |");
@@ -64,8 +63,5 @@ public class Ui {
         System.out.println("\t\t|___________________________________________________|___________________________________________________|");
 
     }
-
-
-
 
 }
