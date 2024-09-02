@@ -58,8 +58,12 @@ public class Ui {
         System.out.println("\t\t|___________________________________________________|___________________________________________________|");
         System.out.println("\t\t|    9. Display Monthly Carbon Consumption          |    10. Display Yearly Carbon Consumption          |");
         System.out.println("\t\t|___________________________________________________|___________________________________________________|");
+        System.out.println("\t\t|                                                                                                       |");
+        System.out.println("\t\t|                                    11. Generate Consumption Report                                    |");
+        System.out.println("\t\t|                                                                                                       |");
+        System.out.println("\t\t|_______________________________________________________________________________________________________|");
         System.out.println("\t\t|                                                   |                                                   |");
-        System.out.println("\t\t|                    11. MENU                       |                       0. EXIT                     |");
+        System.out.println("\t\t|                    12. MENU                       |                       0. EXIT                     |");
         System.out.println("\t\t|___________________________________________________|___________________________________________________|");
 
     }

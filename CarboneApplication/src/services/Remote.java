@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import models.User;
+
 
 public class Remote {
     private static Map<String, User> users = new HashMap<>();
@@ -25,7 +27,7 @@ public class Remote {
                 isMenu = false;
             }
 
-            System.out.print("\n\n\n\t\ti@carbone:~$ ");
+            System.out.print("\n\n\t\ti@carbone:~$ ");
             int choice = scanner.nextInt();
             scanner.nextLine(); 
 
@@ -61,6 +63,9 @@ public class Remote {
                     displayYearlyCarbonConsumption();
                     break;
                 case 11:
+                    generateReport();
+                    break;
+                case 12:
                     isMenu = true;
                     break;
                 case 0:
@@ -74,7 +79,7 @@ public class Remote {
     }
 
     // -------------------------------------------------------------
-    //                     ✨ Account Methods
+    //                     ✨ Account Methods                      
     // -------------------------------------------------------------
    
     private static void createAccount() {
@@ -266,4 +271,38 @@ public class Remote {
             System.out.println("\n\t\t| User not found |");
         }
     }
+
+    public static void generateReport() {
+        System.out.print("\n\t\t-------------------\n");
+        System.out.print("\t\tEnter ID of the user: ");
+        String id = scanner.nextLine();
+        User user = users.get(id);
+        if (user != null) {
+            System.out.print("\n\t\t");
+
+            System.err.println("\n\t\t| Report for user " + user.name + " |");
+            System.out.print("\t\t");
+
+            for (int i = 0; i < 50; i++) {
+                System.out.print("-");
+            }
+
+            System.out.println();
+            System.out.println("\t\t" + user.generateReport() );
+            System.out.print("\t\t");
+
+            for (int i = 0; i < 50; i++) {
+                System.out.print("-");
+            }
+
+            // total consumption
+            double totalConsumption = user.getTotalConsumption(LocalDate.MIN, LocalDate.MAX);
+            System.out.println("\n\t\t| Total Carbon Consumption: " + totalConsumption + " |");
+
+        } else {
+            System.out.println("\n\t\t| User not found |");
+        }
+    }
+   
+
 }

@@ -1,4 +1,4 @@
-package services;
+package models;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
@@ -78,6 +78,15 @@ public class User {
         LocalDate startOfYear = LocalDate.of(year, 1, 1);
         LocalDate endOfYear = LocalDate.of(year, 12, 31);
         return getTotalConsumption(startOfYear, endOfYear);
+    }
+
+    public String generateReport() {
+        String result = "";
+        
+        for (Consumption c : consumptionList) {
+            result += c.toString() + "\n\t\t";
+        }
+        return result;
     }
 
     @Override
