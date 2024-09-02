@@ -30,7 +30,28 @@ public class User {
     }
 
     public void addConsumption(LocalDate startDate, LocalDate endDate, double amount) {
-        consumptionList.add(new Consumption(startDate, endDate, amount));
+
+        if (consumptionList.isEmpty()) {
+            consumptionList.add(new Consumption(startDate, endDate, amount));
+            return;
+        }
+        for (Consumption c : consumptionList) {
+
+            if ((endDate.isAfter(c.getStartDate()) && endDate.isBefore(c.getEndDate()) || endDate.isEqual(c.getEndDate()) || endDate.isEqual(c.getStartDate())  ) || 
+                (startDate.isAfter(c.getStartDate()) && startDate.isBefore(c.getEndDate()) || startDate.isEqual(c.getEndDate()) || startDate.isEqual(c.getStartDate()))
+            ) {
+                LocalDate newStartDate = startDate.isBefore(c.getStartDate()) ? startDate : c.getStartDate();
+                LocalDate newEndDate = endDate.isAfter(c.getEndDate()) ? endDate : c.getEndDate();
+                double newAmount = c.getAmount() + amount;
+                consumptionList.remove(c);
+                consumptionList.add(new Consumption(newStartDate, newEndDate, newAmount));
+                return;
+
+            }else{
+                consumptionList.add(new Consumption(startDate, endDate, amount));
+            }
+        }
+
     }
 
     public double getTotalConsumption(LocalDate startDate, LocalDate endDate) {

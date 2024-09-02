@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 import models.User;
 
-
 public class Remote {
     private static Map<String, User> users = new HashMap<>();
     private static Scanner scanner = new Scanner(System.in);
@@ -21,7 +20,7 @@ public class Remote {
 
         while (running) {
 
-            if(isMenu){
+            if (isMenu) {
                 Ui ui = new Ui();
                 ui.displayMenu2();
                 isMenu = false;
@@ -29,7 +28,7 @@ public class Remote {
 
             System.out.print("\n\n\t\ti@carbone:~$ ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -79,9 +78,9 @@ public class Remote {
     }
 
     // -------------------------------------------------------------
-    //                     ✨ Account Methods                      
+    // ✨ Account Methods
     // -------------------------------------------------------------
-   
+
     private static void createAccount() {
         System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID: ");
@@ -90,15 +89,23 @@ public class Remote {
         String name = scanner.nextLine();
         System.out.print("\t\tEnter Age: ");
         int age = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();
 
-        if(age < 0 || age > 120)
-            System.out.println("\n\t\t| Account creation failed. Please enter a valid age |");
-        else{
-            User user = new User(id, name, age);
-            users.put(id, user);
-            System.out.println("\n\t\t| Account created successfully |");
+        if (users.get(id) == null) {
+
+            if (age < 0 || age > 120)
+                System.out.println("\n\t\t| Account creation failed. Please enter a valid age |" + users.get(id));
+            else {
+                User user = new User(id, name, age);
+                users.put(id, user);
+                System.out.println("\n\t\t| Account created successfully |");
+            }
+
+        } else {
+
+            System.out.println("\n\t\t| Account creation failed. User already exists |");
         }
+
     }
 
     private static void updateAccount() {
@@ -109,19 +116,20 @@ public class Remote {
         String newName = scanner.nextLine();
         System.out.print("\t\tEnter new Age: ");
         int newAge = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();
 
         User user = users.get(id);
+
         if (user != null) {
 
-            if(newAge < 0 || newAge > 120)
-                 System.out.println("\n\t\t| Account creation failed. Please enter a valid age |");
+            if (newAge < 0 || newAge > 120)
+                System.out.println("\n\t\t| Account creation failed. Please enter a valid age |");
             else {
                 user.name = newName;
                 user.age = newAge;
                 System.out.println("\n\t\t| Account updated successfully |");
             }
-            
+
         } else {
             System.out.println("\n\t\t| User not found |");
         }
@@ -153,7 +161,7 @@ public class Remote {
     }
 
     // -------------------------------------------------------------
-    //                 ✨ Carbon Consumption Methods
+    // ✨ Carbon Consumption Methods
     // -------------------------------------------------------------
 
     private static void addCarbonConsumption() {
@@ -168,7 +176,7 @@ public class Remote {
         String endDateStr = scanner.next();
         LocalDate startDate = LocalDate.parse(startDateStr, dateFormatter);
         LocalDate endDate = LocalDate.parse(endDateStr, dateFormatter);
-        scanner.nextLine(); 
+        scanner.nextLine();
 
         User user = users.get(id);
         if (user != null) {
@@ -194,7 +202,8 @@ public class Remote {
         User user = users.get(id);
         if (user != null) {
             double totalConsumption = user.getTotalConsumption(startDate, endDate);
-            System.out.println("\n\t\t| Total Carbon Consumption from " + startDate + " to " + endDate + ": " + totalConsumption + " |");
+            System.out.println("\n\t\t| Total Carbon Consumption from " + startDate + " to " + endDate + ": "
+                    + totalConsumption + " |");
         } else {
             System.out.println("\n\t\t| User not found |");
         }
@@ -225,12 +234,13 @@ public class Remote {
         int year = scanner.nextInt();
         System.out.print("\t\tEnter week of year: ");
         int weekOfYear = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();
 
         User user = users.get(id);
         if (user != null) {
             double weeklyConsumption = user.getWeeklyConsumption(year, weekOfYear);
-            System.out.println("\n\t\t| Weekly Carbon Consumption for Year " + year + ", Week " + weekOfYear + ": " + weeklyConsumption + " |");
+            System.out.println("\n\t\t| Weekly Carbon Consumption for Year " + year + ", Week " + weekOfYear + ": "
+                    + weeklyConsumption + " |");
         } else {
             System.out.println("\n\t\t| User not found |");
         }
@@ -244,12 +254,13 @@ public class Remote {
         int year = scanner.nextInt();
         System.out.print("\t\tEnter month (1-12): ");
         int month = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();
 
         User user = users.get(id);
         if (user != null) {
             double monthlyConsumption = user.getMonthlyConsumption(year, month);
-            System.out.println("\n\t\t| Monthly Carbon Consumption for Year " + year + ", Month " + month + ": " + monthlyConsumption + " |");
+            System.out.println("\n\t\t| Monthly Carbon Consumption for Year " + year + ", Month " + month + ": "
+                    + monthlyConsumption + " |");
         } else {
             System.out.println("\n\t\t| User not found |");
         }
@@ -261,7 +272,7 @@ public class Remote {
         String id = scanner.nextLine();
         System.out.print("\t\tEnter year: ");
         int year = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();
 
         User user = users.get(id);
         if (user != null) {
@@ -288,7 +299,7 @@ public class Remote {
             }
 
             System.out.println();
-            System.out.println("\t\t" + user.generateReport() );
+            System.out.println("\t\t" + user.generateReport());
             System.out.print("\t\t");
 
             for (int i = 0; i < 50; i++) {
@@ -303,6 +314,5 @@ public class Remote {
             System.out.println("\n\t\t| User not found |");
         }
     }
-   
 
 }
