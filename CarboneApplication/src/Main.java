@@ -38,6 +38,8 @@ public class Main {
 
     public static void remote() {
         loading(); 
-        Remote.main(null); 
+
+        Remote remote = new Remote();
+        remote.main(); 
     }
 }

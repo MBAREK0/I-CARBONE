@@ -10,11 +10,11 @@ import java.util.Scanner;
 import models.User;
 
 public class Remote {
-    private static Map<String, User> users = new HashMap<>();
-    private static Scanner scanner = new Scanner(System.in);
-    private static DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+     private Map<String, User> users = new HashMap<>();
+     private Scanner scanner = new Scanner(System.in);
+     private DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-    public static void main(String[] args) {
+    public void main() {
         boolean running = true;
         boolean isMenu = true;
 
@@ -81,7 +81,7 @@ public class Remote {
     // ✨ Account Methods
     // -------------------------------------------------------------
 
-    private static void createAccount() {
+     private void createAccount() {
         System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID: ");
         String id = scanner.nextLine();
@@ -108,7 +108,7 @@ public class Remote {
 
     }
 
-    private static void updateAccount() {
+     private void updateAccount() {
         System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user to update: ");
         String id = scanner.nextLine();
@@ -135,7 +135,7 @@ public class Remote {
         }
     }
 
-    private static void deleteAccount() {
+     private void deleteAccount() {
         System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user to delete: ");
         String id = scanner.nextLine();
@@ -147,7 +147,7 @@ public class Remote {
         }
     }
 
-    private static void displayUserInfo() {
+     private void displayUserInfo() {
         System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user to display: ");
         String id = scanner.nextLine();
@@ -164,7 +164,7 @@ public class Remote {
     // ✨ Carbon Consumption Methods
     // -------------------------------------------------------------
 
-    private static void addCarbonConsumption() {
+     private void addCarbonConsumption() {
         System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user: ");
         String id = scanner.nextLine();
@@ -187,7 +187,7 @@ public class Remote {
         }
     }
 
-    private static void displayTotalConsumptionForPeriod() {
+     private void displayTotalConsumptionForPeriod() {
         System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user: ");
         String id = scanner.nextLine();
@@ -209,7 +209,7 @@ public class Remote {
         }
     }
 
-    private static void displayDailyCarbonConsumption() {
+     private void displayDailyCarbonConsumption() {
         System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user: ");
         String id = scanner.nextLine();
@@ -226,7 +226,7 @@ public class Remote {
         }
     }
 
-    private static void displayWeeklyCarbonConsumption() {
+     private void displayWeeklyCarbonConsumption() {
         System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user: ");
         String id = scanner.nextLine();
@@ -246,7 +246,7 @@ public class Remote {
         }
     }
 
-    private static void displayMonthlyCarbonConsumption() {
+     private void displayMonthlyCarbonConsumption() {
         System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user: ");
         String id = scanner.nextLine();
@@ -266,7 +266,7 @@ public class Remote {
         }
     }
 
-    private static void displayYearlyCarbonConsumption() {
+     private void displayYearlyCarbonConsumption() {
         System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user: ");
         String id = scanner.nextLine();
@@ -283,7 +283,7 @@ public class Remote {
         }
     }
 
-    public static void generateReport() {
+    public void generateReport() {
         System.out.print("\n\t\t-------------------\n");
         System.out.print("\t\tEnter ID of the user: ");
         String id = scanner.nextLine();
