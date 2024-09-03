@@ -180,6 +180,7 @@ public class Remote {
 
         User user = users.get(id);
         if (user != null) {
+            
             user.addConsumption(startDate, endDate, amount);
             System.out.println("\n\t\t| Carbon consumption updated successfully |");
         } else {

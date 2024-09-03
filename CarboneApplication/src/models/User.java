@@ -49,6 +49,7 @@ public class User {
 
             }else{
                 consumptionList.add(new Consumption(startDate, endDate, amount));
+                return;
             }
         }
 
