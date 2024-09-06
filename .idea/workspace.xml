@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ead90b7d-097f-4da2-8e22-00f217202ee5" name="Changes" comment="">
+    <list default="true" id="a58f9cd6-ca8e-4c2f-bb0d-d7d4f10040dd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarboneApplication/src/database/DatabaseConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarboneApplication/src/database/DatabaseQueryExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GreenPulse.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/Remote.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/services/Remote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,10 +32,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectId" id="2lNn1WfCFtmpuo3y2s230sBLXaF" />
+  <component name="ProjectId" id="2lbvMym55f2rFPoIHgLKDbbkjdY" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,62 +44,39 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "C:/Users/Youcode/Desktop/helloWorld",
+    "last_opened_file_path": "C:/Users/Youcode/Documents/postgresql-42.7.4.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/Youcode/Desktop/GreenPulse/CarboneApplication/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JAVA"
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Youcode\Desktop\GreenPulse\CarboneApplication\src" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="GreenPulse" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="GreenPulse" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ead90b7d-097f-4da2-8e22-00f217202ee5" name="Changes" comment="" />
-      <created>1725029186529</created>
+      <changelist id="a58f9cd6-ca8e-4c2f-bb0d-d7d4f10040dd" name="Changes" comment="" />
+      <created>1725461547031</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1725029186529</updated>
-      <workItem from="1725029187565" duration="19786000" />
-      <workItem from="1725112146354" duration="565000" />
-      <workItem from="1725112734348" duration="17000" />
-      <workItem from="1725112899632" duration="167000" />
-      <workItem from="1725113071711" duration="57000" />
-      <workItem from="1725113133081" duration="114000" />
-      <workItem from="1725118188699" duration="50000" />
-      <workItem from="1725118382218" duration="13000" />
-      <workItem from="1725121561474" duration="17000" />
+      <updated>1725461547031</updated>
+      <workItem from="1725461548421" duration="4108000" />
+      <workItem from="1725485321797" duration="38000" />
+      <workItem from="1725485372591" duration="376000" />
+      <workItem from="1725485762372" duration="163000" />
+      <workItem from="1725485937672" duration="715000" />
+      <workItem from="1725521848690" duration="1067000" />
+      <workItem from="1725650905748" duration="1669000" />
+      <workItem from="1725652619181" duration="608000" />
     </task>
     <servers />
   </component>
