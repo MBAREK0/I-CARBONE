@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import models.User;
+import entities.User;
 
 public class Remote {
      private Map<String, User> users = new HashMap<>();
@@ -181,8 +181,8 @@ public class Remote {
         User user = users.get(id);
         if (user != null) {
             
-            user.addConsumption(startDate, endDate, amount);
-            System.out.println("\n\t\t| Carbon consumption updated successfully |");
+            //user.addConsumption(startDate, endDate, amount);
+            System.out.println("\n\t\t| Carbon consumption added successfully |");
         } else {
             System.out.println("\n\t\t| User not found |");
         }

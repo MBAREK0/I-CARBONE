@@ -1,4 +1,6 @@
-package models;
+package entities;
+
+import entities.Consumption;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
@@ -32,7 +34,7 @@ public class User {
     public void addConsumption(LocalDate startDate, LocalDate endDate, double amount) {
 
         if (consumptionList.isEmpty()) {
-            consumptionList.add(new Consumption(startDate, endDate, amount));
+           // consumptionList.add(new Consumption(startDate, endDate, amount));
             return;
         }
         for (Consumption c : consumptionList) {
@@ -44,11 +46,11 @@ public class User {
                 LocalDate newEndDate = endDate.isAfter(c.getEndDate()) ? endDate : c.getEndDate();
                 double newAmount = c.getAmount() + amount;
                 consumptionList.remove(c);
-                consumptionList.add(new Consumption(newStartDate, newEndDate, newAmount));
+                //consumptionList.add(new Consumption(newStartDate, newEndDate, newAmount));
                 return;
 
             }else{
-                consumptionList.add(new Consumption(startDate, endDate, amount));
+                //consumptionList.add(new Consumption(startDate, endDate, amount));
                 return;
             }
         }
