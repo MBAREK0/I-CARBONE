@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.48">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>848</IntrospectionStateNumber>
+      <IntrospectionStateNumber>880</IntrospectionStateNumber>
       <ServerVersion>16.4</ServerVersion>
       <StartupTime>1725790967</StartupTime>
       <TimeZones>true ACDT
@@ -1402,7 +1402,7 @@ true posixrules
 13212||10|C|G
 13212||-9223372036854775808|U|G
 13212||10|U|G</Grants>
-      <IntrospectionStateNumber>848</IntrospectionStateNumber>
+      <IntrospectionStateNumber>880</IntrospectionStateNumber>
       <ObjectId>24745</ObjectId>
       <OwnerName>user</OwnerName>
     </database>
@@ -4837,7 +4837,7 @@ true posixrules
     <schema id="265" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>848</IntrospectionStateNumber>
+      <IntrospectionStateNumber>880</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>524</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4847,7 +4847,7 @@ true posixrules
       <ObjectId>24790</ObjectId>
       <SequenceIdentity>1(1)</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>840</StateNumber>
+      <StateNumber>878</StateNumber>
       <OwnerName>user</OwnerName>
     </sequence>
     <sequence id="267" parent="265" name="food_id_seq">
@@ -4855,7 +4855,7 @@ true posixrules
       <ObjectId>24803</ObjectId>
       <SequenceIdentity>1(1)</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>841</StateNumber>
+      <StateNumber>878</StateNumber>
       <OwnerName>user</OwnerName>
     </sequence>
     <sequence id="268" parent="265" name="housing_id_seq">
@@ -4863,7 +4863,7 @@ true posixrules
       <ObjectId>24816</ObjectId>
       <SequenceIdentity>1(1)</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>842</StateNumber>
+      <StateNumber>878</StateNumber>
       <OwnerName>user</OwnerName>
     </sequence>
     <sequence id="269" parent="265" name="transport_id_seq">
@@ -4871,7 +4871,7 @@ true posixrules
       <ObjectId>24829</ObjectId>
       <SequenceIdentity>1(1)</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>843</StateNumber>
+      <StateNumber>878</StateNumber>
       <OwnerName>user</OwnerName>
     </sequence>
     <sequence id="270" parent="265" name="users_id_seq">
@@ -4879,36 +4879,36 @@ true posixrules
       <ObjectId>24746</ObjectId>
       <SequenceIdentity>1(1)</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>834</StateNumber>
+      <StateNumber>878</StateNumber>
       <OwnerName>user</OwnerName>
     </sequence>
     <table id="271" parent="265" name="consumption">
       <ObjectId>24791</ObjectId>
-      <StateNumber>840</StateNumber>
+      <StateNumber>878</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>user</OwnerName>
     </table>
     <table id="272" parent="265" name="food">
       <ObjectId>24804</ObjectId>
-      <StateNumber>841</StateNumber>
+      <StateNumber>878</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>user</OwnerName>
     </table>
     <table id="273" parent="265" name="housing">
       <ObjectId>24817</ObjectId>
-      <StateNumber>842</StateNumber>
+      <StateNumber>878</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>user</OwnerName>
     </table>
     <table id="274" parent="265" name="transport">
       <ObjectId>24830</ObjectId>
-      <StateNumber>843</StateNumber>
+      <StateNumber>878</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>user</OwnerName>
     </table>
     <table id="275" parent="265" name="users">
       <ObjectId>24747</ObjectId>
-      <StateNumber>840</StateNumber>
+      <StateNumber>878</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>user</OwnerName>
     </table>
@@ -4984,7 +4984,7 @@ true posixrules
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24796</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>840</StateNumber>
+      <StateNumber>878</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
@@ -5046,7 +5046,7 @@ true posixrules
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24809</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>841</StateNumber>
+      <StateNumber>878</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
@@ -5108,7 +5108,7 @@ true posixrules
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24822</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>842</StateNumber>
+      <StateNumber>878</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
@@ -5170,7 +5170,7 @@ true posixrules
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24835</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>843</StateNumber>
+      <StateNumber>878</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
@@ -5216,7 +5216,7 @@ true posixrules
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24753</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>834</StateNumber>
+      <StateNumber>878</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
@@ -5224,7 +5224,7 @@ true posixrules
       <ColNames>cin</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24755</ObjectId>
-      <StateNumber>834</StateNumber>
+      <StateNumber>878</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>

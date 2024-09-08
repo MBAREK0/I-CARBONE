@@ -3,12 +3,18 @@ package services;
 import services.UiElements.Ui;
 import java.util.Scanner;
 
+import entities.Consumption;
+import entities.User;
+import repositories.ConsumptionRepository;
+import repositories.UserRepository;
+
 
 public class Remote {
      private UserService userService = new UserService();
      private Scanner scanner = new Scanner(System.in);
      private ConsumptionService consumptionService = new ConsumptionService();
 
+    private ConsumptionFilterService consumptionFilterService = new ConsumptionFilterService();
     public void main() {
         boolean running = true;
         boolean isMenu = true;
@@ -42,6 +48,16 @@ public class Remote {
                 // ---🕸️ Consumption Cases-------------------------------------------------------
                 case 5:
                     addCarbonConsumption();
+                    break;
+                case 6:
+                    try {
+                        filterUsers();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case 7:
+                    DisplayAverageConsumption();
                     break;
 
                 case 12:
@@ -80,6 +96,13 @@ public class Remote {
 
     private void addCarbonConsumption() {
         consumptionService.addConsumption();
+    }
+
+    public void filterUsers() throws Exception {
+        consumptionFilterService.filterUsers();
+    }
+    public void DisplayAverageConsumption() {
+        consumptionService.getAndDisplayAverageConsumption();
     }
 
     }

@@ -12,6 +12,12 @@ import entities.Housing;
 import entities.Transport;
 import repositories.UserRepository;
 import entities.User;
+import java.util.List;
+import java.util.OptionalDouble;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
+import java.util.Scanner;
 
 
 public class ConsumptionService {
@@ -19,6 +25,9 @@ public class ConsumptionService {
     private Scanner scanner = new Scanner(System.in);
     private ConsumptionRepository consumptionRepository = new ConsumptionRepository(); // Assume you have this class for DB operations
     private DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private UserRepository userRepository = new UserRepository();
+
+
 
     public void addConsumption() {
         try {
@@ -96,6 +105,54 @@ public class ConsumptionService {
             e.printStackTrace();
         } catch (IllegalArgumentException e) {
             System.out.println("Invalid input. Please check your entries.");
+        }
+    }
+
+    public void getAndDisplayAverageConsumption() {
+        try {
+            // Get input from the user
+            System.out.print("Enter Start Date (yyyy-MM-dd): ");
+            LocalDate startDate = parseDate(scanner.nextLine());
+
+            System.out.print("Enter End Date (yyyy-MM-dd): ");
+            LocalDate endDate = parseDate(scanner.nextLine());
+
+            System.out.print("Enter User CIN: ");
+            String userCin = scanner.nextLine();
+
+            // Call the method to display the average consumption
+            displayMoyenneConsumptionForPeriod(startDate, endDate, userCin);
+
+        } catch (SQLException e) {
+            System.out.println("Error accessing the database: " + e.getMessage());
+        } catch (DateTimeParseException e) {
+            System.out.println("Invalid date format. Please use yyyy-MM-dd.");
+        }
+    }
+
+    private LocalDate parseDate(String dateString) {
+        return LocalDate.parse(dateString);  // You might want to handle parsing exceptions here
+    }
+
+    public void displayMoyenneConsumptionForPeriod(LocalDate startDate, LocalDate endDate, String userCin) throws SQLException {
+        User user = userRepository.getUserByCin(userCin);
+        if (user == null) {
+            System.out.println("User with CIN " + userCin + " not found.");
+            return;
+        }
+
+        List<Consumption> consumptions = consumptionRepository.getAllConsumptions();
+
+        OptionalDouble averageConsumption = consumptions.stream()
+                .filter(consumption -> consumption.getUserId() == user.getId())
+                .filter(consumption -> !consumption.getStartDate().isBefore(startDate) && !consumption.getEndDate().isAfter(endDate))
+                .mapToDouble(Consumption::calculateImpact)
+                .average();
+
+        if (averageConsumption.isPresent()) {
+            System.out.println("Average consumption for user with CIN " + userCin + " from " + startDate + " to " + endDate + " is: " + averageConsumption.getAsDouble());
+        } else {
+            System.out.println("No consumption records found for the given criteria.");
         }
     }
 }

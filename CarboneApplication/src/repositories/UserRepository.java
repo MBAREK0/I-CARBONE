@@ -94,18 +94,20 @@ public class UserRepository {
     // List all users
     public List<User> getAllUsers() throws SQLException {
         List<User> users = new ArrayList<>();
-        String sql = "SELECT * FROM users";
-        try (Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery(sql);
+        String sql = "SELECT id, name, age, cin FROM users";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                users.add(new User(
+                User user = new User(
                         resultSet.getInt("id"),
                         resultSet.getString("name"),
                         resultSet.getInt("age"),
                         resultSet.getString("cin")
-                ));
+                );
+                users.add(user);
             }
         }
         return users;
     }
+
 }

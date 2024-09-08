@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a58f9cd6-ca8e-4c2f-bb0d-d7d4f10040dd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CarboneApplication/src/services/ConsumptionFilterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/49ad56ad-76fb-43d3-bd18-64ca0a1fa8d0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/49ad56ad-76fb-43d3-bd18-64ca0a1fa8d0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/49ad56ad-76fb-43d3-bd18-64ca0a1fa8d0/storage_v2/_src_/database/icarbone.DxhfvA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/49ad56ad-76fb-43d3-bd18-64ca0a1fa8d0/storage_v2/_src_/database/icarbone.DxhfvA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarboneApplication/src/repositories/ConsumptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/repositories/ConsumptionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/ConsumptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/services/ConsumptionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/Remote.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/services/Remote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/repositories/ConsumptionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/repositories/ConsumptionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/ConsumptionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/services/ConsumptionService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/Remote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/services/Remote.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +43,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -77,11 +86,21 @@
       <workItem from="1725521848690" duration="1067000" />
       <workItem from="1725650905748" duration="1669000" />
       <workItem from="1725652619181" duration="711000" />
-      <workItem from="1725740525113" duration="21234000" />
+      <workItem from="1725740525113" duration="25833000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
