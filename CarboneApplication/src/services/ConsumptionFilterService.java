@@ -8,6 +8,7 @@ import entities.User;
 import repositories.ConsumptionRepository;
 import repositories.UserRepository;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 
 
@@ -41,6 +42,7 @@ public class ConsumptionFilterService {
                 .collect(Collectors.toList());
     }
 
+    // USERS HAVE > 3000 KGCO2EQ
     public void filterUsers() throws SQLException {
 
         List<User> users = userRepository.getAllUsers();
@@ -50,5 +52,36 @@ public class ConsumptionFilterService {
         List<User> filteredUsers = filterUsersByConsumption(users, consumptions);
 
         filteredUsers.forEach(System.out::println);
+    }
+
+    public List<User> filterInactiveUsers(List<User> users, List<Consumption> consumptions, LocalDate startDate, LocalDate endDate) {
+        // Filter consumptions within the specified period
+        List<Consumption> filteredConsumptions = consumptions.stream()
+                .filter(c -> !c.getStartDate().isBefore(startDate) && !c.getEndDate().isAfter(endDate))
+                .collect(Collectors.toList());
+
+        // Group consumptions by userId
+        Map<Integer, List<Consumption>> consumptionByUser = filteredConsumptions.stream()
+                .collect(Collectors.groupingBy(Consumption::getUserId));
+
+        // Filter users who have no consumption records in the specified period
+        return users.stream()
+                .filter(user -> !consumptionByUser.containsKey(user.getId()))
+                .collect(Collectors.toList());
+    }
+
+    public List<User> sortUsersByConsumption(List<User> users, List<Consumption> consumptions) {
+        Map<Integer, List<Consumption>> consumptionByUser = consumptions.stream()
+                .collect(Collectors.groupingBy(Consumption::getUserId));
+
+        return users.stream()
+                .sorted((u1, u2) -> {
+                    double totalImpact1 = consumptionByUser.getOrDefault(u1.getId(), List.of())
+                            .stream().mapToDouble(Consumption::calculateImpact).sum();
+                    double totalImpact2 = consumptionByUser.getOrDefault(u2.getId(), List.of())
+                            .stream().mapToDouble(Consumption::calculateImpact).sum();
+                    return Double.compare(totalImpact2, totalImpact1);
+                })
+                .collect(Collectors.toList());
     }
 }

@@ -3,11 +3,6 @@ package services;
 import services.UiElements.Ui;
 import java.util.Scanner;
 
-import entities.Consumption;
-import entities.User;
-import repositories.ConsumptionRepository;
-import repositories.UserRepository;
-
 
 public class Remote {
      private UserService userService = new UserService();
@@ -32,7 +27,6 @@ public class Remote {
             scanner.nextLine();
 
             switch (choice) {
-                // ---🕸️ Account Cases---------------------------------------------------------
                 case 1:
                     createAccount();
                     break;
@@ -45,7 +39,6 @@ public class Remote {
                 case 4:
                     displayUserInfo();
                     break;
-                // ---🕸️ Consumption Cases-------------------------------------------------------
                 case 5:
                     addCarbonConsumption();
                     break;
@@ -58,6 +51,17 @@ public class Remote {
                     break;
                 case 7:
                     DisplayAverageConsumption();
+                    break;
+                case 8:
+                    try {
+                        findInactiveUsers();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    break;
+                case 9:
+                    displaySortedUsersByConsumption();
                     break;
 
                 case 12:
@@ -105,4 +109,20 @@ public class Remote {
         consumptionService.getAndDisplayAverageConsumption();
     }
 
+    public void findInactiveUsers() {
+        try {
+            userService.findInactiveUsers();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+    public void displaySortedUsersByConsumption() {
+        try {
+            userService.displaySortedUsersByConsumption();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+}
