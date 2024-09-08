@@ -10,6 +10,8 @@ import entities.ConsumptionType;
 import entities.Food;
 import entities.Housing;
 import entities.Transport;
+import repositories.UserRepository;
+import entities.User;
 
 
 public class ConsumptionService {
@@ -21,9 +23,15 @@ public class ConsumptionService {
     public void addConsumption() {
         try {
             // Get user ID
-            System.out.print("Enter User ID: ");
-            int userId = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            System.out.print("Enter User cin: ");
+            String cin = scanner.nextLine();
+            UserRepository userRepository = new UserRepository();
+            User user = userRepository.getUserByCin(cin);
+            if (user == null) {
+                System.out.println("User not found.");
+                return;
+            }
+            int userId = user.getId();
 
             // Get amount
             System.out.print("Enter Amount: ");

@@ -1,9 +1,7 @@
 package repositories;
 
 import entities.Consumption;
-import entities.ConsumptionType;
 import utils.DatabaseConnection;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -18,13 +16,11 @@ public class ConsumptionRepository {
 
     public ConsumptionRepository() {
         try {
-            // Use the connection from the DatabaseConnection utility
             connection = DatabaseConnection.getConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-
     public void addConsumption(Consumption consumption) throws SQLException {
         String insertConsumptionSQL = "INSERT INTO Consumption (startDate, endDate, amount, consumptionImpact, consumptionType, userId) VALUES (?, ?, ?, ?, ?, ?)";
         String insertSpecificSQL = null;
@@ -47,7 +43,6 @@ public class ConsumptionRepository {
                     throw new SQLException("Creating consumption failed, no rows affected.");
                 }
 
-                // Retrieve the generated ID of the inserted consumption
                 int consumptionId = 0;
                 try (var generatedKeys = consumptionStatement.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
@@ -57,7 +52,6 @@ public class ConsumptionRepository {
                     }
                 }
 
-                // Determine the specific SQL statement and parameters based on the consumption type
                 if (consumption instanceof Food) {
                     insertSpecificSQL = "INSERT INTO Food (typeOfFood, weight, consumptionId) VALUES (?, ?, ?)";
                     try (PreparedStatement specificStatement = connection.prepareStatement(insertSpecificSQL)) {
@@ -90,9 +84,9 @@ public class ConsumptionRepository {
                 // Commit the transaction
                 connection.commit();
             } catch (SQLException e) {
-                // Rollback the transaction if something goes wrong
+
                 connection.rollback();
-                throw e; // Re-throw the exception to be handled by the caller
+                throw e;
             }
         } finally {
             // Restore auto-commit mode
@@ -105,37 +99,4 @@ public class ConsumptionRepository {
     }
 
 
-    // Additional methods for updating, deleting, and retrieving consumption records
-
-    public void updateConsumption(Consumption consumption) throws SQLException {
-        String sql = "UPDATE Consumption SET startDate = ?, endDate = ?, amount = ?, consumptionImpact = ?, consumptionType = ?, userId = ? WHERE id = ?";
-
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            // Set parameters for the prepared statement
-            statement.setDate(1, java.sql.Date.valueOf(consumption.getStartDate()));
-            statement.setDate(2, java.sql.Date.valueOf(consumption.getEndDate()));
-            statement.setDouble(3, consumption.getAmount());
-            statement.setDouble(4, consumption.calculateImpact());
-            statement.setString(5, consumption.getType().name());
-            statement.setInt(6, consumption.getUserId());
-            statement.setInt(7, consumption.getId()); // Assuming Consumption has a getId() method
-
-            // Execute the update operation
-            statement.executeUpdate();
-        }
-    }
-
-    public void deleteConsumption(int id) throws SQLException {
-        String sql = "DELETE FROM Consumption WHERE id = ?";
-
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            // Set the ID parameter
-            statement.setInt(1, id);
-
-            // Execute the delete operation
-            statement.executeUpdate();
-        }
-    }
-
-    // Add more methods for retrieving records as needed
 }

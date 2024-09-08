@@ -1,14 +1,7 @@
 package services;
 
 import services.UiElements.Ui;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
-import repositories.UserRepository;
-import entities.User;
-import java.sql.SQLException;
 
 
 public class Remote {
@@ -33,6 +26,7 @@ public class Remote {
             scanner.nextLine();
 
             switch (choice) {
+                // ---🕸️ Account Cases---------------------------------------------------------
                 case 1:
                     createAccount();
                     break;
@@ -45,6 +39,7 @@ public class Remote {
                 case 4:
                     displayUserInfo();
                     break;
+                // ---🕸️ Consumption Cases-------------------------------------------------------
                 case 5:
                     addCarbonConsumption();
                     break;
@@ -69,16 +64,12 @@ public class Remote {
     private void createAccount() {
         userService.addUser();
     }
-
-
     private void updateAccount() {
         userService.updateUser();
     }
-
-     private void deleteAccount() {
+    private void deleteAccount() {
         userService.deleteUser();
          }
-
     public void displayUserInfo() {
         userService.displayUserInfo();
     }

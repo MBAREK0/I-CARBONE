@@ -5,24 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a58f9cd6-ca8e-4c2f-bb0d-d7d4f10040dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CarboneApplication/src/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/49ad56ad-76fb-43d3-bd18-64ca0a1fa8d0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/49ad56ad-76fb-43d3-bd18-64ca0a1fa8d0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/49ad56ad-76fb-43d3-bd18-64ca0a1fa8d0/storage_v2/_src_/database/database_name.z9arsA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/49ad56ad-76fb-43d3-bd18-64ca0a1fa8d0/storage_v2/_src_/database/database_name.z9arsA/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/49ad56ad-76fb-43d3-bd18-64ca0a1fa8d0/storage_v2/_src_/database/database_name.z9arsA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/entities/Consumption.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/entities/Consumption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/entities/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/entities/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/entities/Housing.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/entities/Housing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/entities/Transport.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/entities/Transport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarboneApplication/src/repositories/ConsumptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/repositories/ConsumptionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/ConsumptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/services/ConsumptionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/Remote.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/services/Remote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/utils/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/utils/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenPulse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GreenPulse.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/repositories/ConsumptionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/repositories/ConsumptionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/Remote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/services/Remote.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +77,7 @@
       <workItem from="1725521848690" duration="1067000" />
       <workItem from="1725650905748" duration="1669000" />
       <workItem from="1725652619181" duration="711000" />
-      <workItem from="1725740525113" duration="18330000" />
+      <workItem from="1725740525113" duration="21234000" />
     </task>
     <servers />
   </component>

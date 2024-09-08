@@ -17,9 +17,8 @@ public class UserService {
 
     public void addUser() {
         System.out.print("\n\t\t-------------------\n");
-        System.out.print("\t\tEnter ID: ");
-        int id = scanner.nextInt(); // Assuming ID is an integer, change this if it's different
-        scanner.nextLine(); // Consume newline
+
+        int id = 0;
         System.out.print("\t\tEnter Name: ");
         String name = scanner.nextLine();
         System.out.print("\t\tEnter Age: ");
@@ -51,14 +50,14 @@ public class UserService {
 
     public void updateUser() {
         System.out.print("\n\t\t-------------------\n");
-        System.out.print("\t\tEnter ID of the user to update: ");
-        int userId = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline
+        System.out.print("\t\tEnter Cin of the user to update: ");
+        String cin = scanner.nextLine();
+
 
         try {
             UserRepository userRepository = new UserRepository();
             // Fetch the user from the database
-            User user = userRepository.getUserById(userId);
+            User user = userRepository.getUserByCin(cin);
 
             if (user != null) {
                 System.out.print("\t\tEnter new Name: ");
@@ -88,18 +87,18 @@ public class UserService {
 
     public void deleteUser(){
         System.out.print("\n\t\t-------------------\n");
-        System.out.print("\t\tEnter ID of the user to delete: ");
-        int userId = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline
+        System.out.print("\t\tEnter Cin of the user to delete: ");
+        String cin = scanner.nextLine();
+
 
         try {
             UserRepository userRepository = new UserRepository();
             // Check if the user exists before attempting to delete
-            User user = userRepository.getUserById(userId);
+            User user = userRepository.getUserByCin(cin);
 
             if (user != null) {
                 // Delete the user from the database
-                userRepository.deleteUser(userId);
+                userRepository.deleteUser(user.getId());
                 System.out.println("\n\t\t| Account deleted successfully |");
             } else {
                 System.out.println("\n\t\t| User not found |");
@@ -111,14 +110,14 @@ public class UserService {
 
     public void displayUserInfo(){
         System.out.print("\n\t\t-------------------\n");
-        System.out.print("\t\tEnter ID of the user to display: ");
-        int userId = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline
+        System.out.print("\t\tEnter Cin of the user to display: ");
+        String cin = scanner.nextLine();
+
 
         try {
             UserRepository userRepository = new UserRepository();
             // Fetch the user from the database
-            User user = userRepository.getUserById(userId);
+            User user = userRepository.getUserByCin(cin);
 
             if (user != null) {
                 // Display user information
