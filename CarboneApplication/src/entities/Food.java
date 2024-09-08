@@ -1,23 +1,42 @@
 package entities;
 
 import java.time.LocalDate;
+
 public class Food extends Consumption {
-    private String foodType;
+
+    private String typeOfFood;
     private double weight;
 
-    public Food(LocalDate startDate, LocalDate endDate, double amount, String foodType, double weight) {
-        super(startDate, endDate, amount, ConsumptionType.FOOD);
-        this.foodType = foodType;
+    // Constructor definition
+    public Food(LocalDate startDate, LocalDate endDate, double amount, ConsumptionType type, int userId, String typeOfFood, double weight) {
+        super(startDate, endDate, amount, type, userId);
+        this.typeOfFood = typeOfFood;
+        this.weight = weight;
+    }
+
+    // Getter and setter methods
+
+
+    public String getTypeOfFood() {
+        return typeOfFood;
+    }
+
+    public void setTypeOfFood(String typeOfFood) {
+        this.typeOfFood = typeOfFood;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
     @Override
     public double calculateImpact() {
-        if (foodType.equalsIgnoreCase("meat")) {
-            impact = weight * 5.0;
-        } else if (foodType.equalsIgnoreCase("vegetable")) {
-            impact = weight * 0.5;
-        }
-        return impact;
+        double impactPerWeight = (typeOfFood.equals("MEAT") ? 5.0 : 0.5);
+        return impactPerWeight * weight;
     }
+
 }

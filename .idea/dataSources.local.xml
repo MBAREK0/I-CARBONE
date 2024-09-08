@@ -10,8 +10,8 @@
       <user-name>user</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="database" qname="database_name">
-            <node kind="schema" negative="1" />
+          <node kind="database" qname="icarbone">
+            <node kind="schema" qname="public" />
           </node>
         </introspection-scope>
       </schema-mapping>

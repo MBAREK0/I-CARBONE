@@ -6,13 +6,15 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
+import repositories.UserRepository;
 import entities.User;
+import java.sql.SQLException;
+
 
 public class Remote {
-     private Map<String, User> users = new HashMap<>();
+     private UserService userService = new UserService();
      private Scanner scanner = new Scanner(System.in);
-     private DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+     private ConsumptionService consumptionService = new ConsumptionService();
 
     public void main() {
         boolean running = true;
@@ -46,24 +48,7 @@ public class Remote {
                 case 5:
                     addCarbonConsumption();
                     break;
-                case 6:
-                    displayTotalConsumptionForPeriod();
-                    break;
-                case 7:
-                    displayDailyCarbonConsumption();
-                    break;
-                case 8:
-                    displayWeeklyCarbonConsumption();
-                    break;
-                case 9:
-                    displayMonthlyCarbonConsumption();
-                    break;
-                case 10:
-                    displayYearlyCarbonConsumption();
-                    break;
-                case 11:
-                    generateReport();
-                    break;
+
                 case 12:
                     isMenu = true;
                     break;
@@ -81,239 +66,29 @@ public class Remote {
     // ✨ Account Methods
     // -------------------------------------------------------------
 
-     private void createAccount() {
-        System.out.print("\n\t\t-------------------\n");
-        System.out.print("\t\tEnter ID: ");
-        String id = scanner.nextLine();
-        System.out.print("\t\tEnter Name: ");
-        String name = scanner.nextLine();
-        System.out.print("\t\tEnter Age: ");
-        int age = scanner.nextInt();
-        scanner.nextLine();
-
-        if (users.get(id) == null) {
-
-            if (age < 0 || age > 120)
-                System.out.println("\n\t\t| Account creation failed. Please enter a valid age |" + users.get(id));
-            else {
-                User user = new User(id, name, age);
-                users.put(id, user);
-                System.out.println("\n\t\t| Account created successfully |");
-            }
-
-        } else {
-
-            System.out.println("\n\t\t| Account creation failed. User already exists |");
-        }
-
+    private void createAccount() {
+        userService.addUser();
     }
 
-     private void updateAccount() {
-        System.out.print("\n\t\t-------------------\n");
-        System.out.print("\t\tEnter ID of the user to update: ");
-        String id = scanner.nextLine();
-        System.out.print("\t\tEnter new Name: ");
-        String newName = scanner.nextLine();
-        System.out.print("\t\tEnter new Age: ");
-        int newAge = scanner.nextInt();
-        scanner.nextLine();
 
-        User user = users.get(id);
-
-        if (user != null) {
-
-            if (newAge < 0 || newAge > 120)
-                System.out.println("\n\t\t| Account creation failed. Please enter a valid age |");
-            else {
-                user.name = newName;
-                user.age = newAge;
-                System.out.println("\n\t\t| Account updated successfully |");
-            }
-
-        } else {
-            System.out.println("\n\t\t| User not found |");
-        }
+    private void updateAccount() {
+        userService.updateUser();
     }
 
      private void deleteAccount() {
-        System.out.print("\n\t\t-------------------\n");
-        System.out.print("\t\tEnter ID of the user to delete: ");
-        String id = scanner.nextLine();
+        userService.deleteUser();
+         }
 
-        if (users.remove(id) != null) {
-            System.out.println("\n\t\t| Account deleted successfully |");
-        } else {
-            System.out.println("\n\t\t| User not found |");
-        }
-    }
-
-     private void displayUserInfo() {
-        System.out.print("\n\t\t-------------------\n");
-        System.out.print("\t\tEnter ID of the user to display: ");
-        String id = scanner.nextLine();
-
-        User user = users.get(id);
-        if (user != null) {
-            System.out.println("\n\t\t" + user);
-        } else {
-            System.out.println("\n\t\t| User not found |");
-        }
+    public void displayUserInfo() {
+        userService.displayUserInfo();
     }
 
     // -------------------------------------------------------------
-    // ✨ Carbon Consumption Methods
+    // ✨ Consumption Methods
     // -------------------------------------------------------------
 
-     private void addCarbonConsumption() {
-        System.out.print("\n\t\t-------------------\n");
-        System.out.print("\t\tEnter ID of the user: ");
-        String id = scanner.nextLine();
-        System.out.print("\t\tEnter amount of carbon consumption to add: ");
-        double amount = scanner.nextDouble();
-        System.out.print("\t\tEnter start date (yyyy-MM-dd): ");
-        String startDateStr = scanner.next();
-        System.out.print("\t\tEnter end date (yyyy-MM-dd): ");
-        String endDateStr = scanner.next();
-        LocalDate startDate = LocalDate.parse(startDateStr, dateFormatter);
-        LocalDate endDate = LocalDate.parse(endDateStr, dateFormatter);
-        scanner.nextLine();
-
-        User user = users.get(id);
-        if (user != null) {
-            
-            //user.addConsumption(startDate, endDate, amount);
-            System.out.println("\n\t\t| Carbon consumption added successfully |");
-        } else {
-            System.out.println("\n\t\t| User not found |");
-        }
+    private void addCarbonConsumption() {
+        consumptionService.addConsumption();
     }
 
-     private void displayTotalConsumptionForPeriod() {
-        System.out.print("\n\t\t-------------------\n");
-        System.out.print("\t\tEnter ID of the user: ");
-        String id = scanner.nextLine();
-        System.out.print("\t\tEnter start date (yyyy-MM-dd): ");
-        String startDateStr = scanner.nextLine();
-        System.out.print("\t\tEnter end date (yyyy-MM-dd): ");
-        String endDateStr = scanner.nextLine();
-
-        LocalDate startDate = LocalDate.parse(startDateStr, dateFormatter);
-        LocalDate endDate = LocalDate.parse(endDateStr, dateFormatter);
-
-        User user = users.get(id);
-        if (user != null) {
-            double totalConsumption = user.getTotalConsumption(startDate, endDate);
-            System.out.println("\n\t\t| Total Carbon Consumption from " + startDate + " to " + endDate + ": "
-                    + totalConsumption + " |");
-        } else {
-            System.out.println("\n\t\t| User not found |");
-        }
     }
-
-     private void displayDailyCarbonConsumption() {
-        System.out.print("\n\t\t-------------------\n");
-        System.out.print("\t\tEnter ID of the user: ");
-        String id = scanner.nextLine();
-        System.out.print("\t\tEnter date (yyyy-MM-dd): ");
-        String dateStr = scanner.nextLine();
-        LocalDate date = LocalDate.parse(dateStr, dateFormatter);
-
-        User user = users.get(id);
-        if (user != null) {
-            double dailyConsumption = user.getDailyConsumption(date);
-            System.out.println("\n\t\t| Daily Carbon Consumption for " + date + ": " + dailyConsumption + " |");
-        } else {
-            System.out.println("\n\t\t| User not found |");
-        }
-    }
-
-     private void displayWeeklyCarbonConsumption() {
-        System.out.print("\n\t\t-------------------\n");
-        System.out.print("\t\tEnter ID of the user: ");
-        String id = scanner.nextLine();
-        System.out.print("\t\tEnter year: ");
-        int year = scanner.nextInt();
-        System.out.print("\t\tEnter week of year: ");
-        int weekOfYear = scanner.nextInt();
-        scanner.nextLine();
-
-        User user = users.get(id);
-        if (user != null) {
-            double weeklyConsumption = user.getWeeklyConsumption(year, weekOfYear);
-            System.out.println("\n\t\t| Weekly Carbon Consumption for Year " + year + ", Week " + weekOfYear + ": "
-                    + weeklyConsumption + " |");
-        } else {
-            System.out.println("\n\t\t| User not found |");
-        }
-    }
-
-     private void displayMonthlyCarbonConsumption() {
-        System.out.print("\n\t\t-------------------\n");
-        System.out.print("\t\tEnter ID of the user: ");
-        String id = scanner.nextLine();
-        System.out.print("\t\tEnter year: ");
-        int year = scanner.nextInt();
-        System.out.print("\t\tEnter month (1-12): ");
-        int month = scanner.nextInt();
-        scanner.nextLine();
-
-        User user = users.get(id);
-        if (user != null) {
-            double monthlyConsumption = user.getMonthlyConsumption(year, month);
-            System.out.println("\n\t\t| Monthly Carbon Consumption for Year " + year + ", Month " + month + ": "
-                    + monthlyConsumption + " |");
-        } else {
-            System.out.println("\n\t\t| User not found |");
-        }
-    }
-
-     private void displayYearlyCarbonConsumption() {
-        System.out.print("\n\t\t-------------------\n");
-        System.out.print("\t\tEnter ID of the user: ");
-        String id = scanner.nextLine();
-        System.out.print("\t\tEnter year: ");
-        int year = scanner.nextInt();
-        scanner.nextLine();
-
-        User user = users.get(id);
-        if (user != null) {
-            double yearlyConsumption = user.getYearlyConsumption(year);
-            System.out.println("\n\t\t| Yearly Carbon Consumption for Year " + year + ": " + yearlyConsumption + " |");
-        } else {
-            System.out.println("\n\t\t| User not found |");
-        }
-    }
-
-    public void generateReport() {
-        System.out.print("\n\t\t-------------------\n");
-        System.out.print("\t\tEnter ID of the user: ");
-        String id = scanner.nextLine();
-        User user = users.get(id);
-        if (user != null) {
-            System.out.print("\n\t\t");
-
-            System.err.println("\n\t\t| Report for user " + user.name + " |");
-            System.out.print("\t\t");
-
-            for (int i = 0; i < 50; i++) {
-                System.out.print("-");
-            }
-
-            System.out.println();
-            System.out.println("\t\t" + user.generateReport());
-            System.out.print("\t\t");
-
-            for (int i = 0; i < 50; i++) {
-                System.out.print("-");
-            }
-
-            // total consumption
-            double totalConsumption = user.getTotalConsumption(LocalDate.MIN, LocalDate.MAX);
-            System.out.println("\n\t\t| Total Carbon Consumption: " + totalConsumption + " |");
-
-        } else {
-            System.out.println("\n\t\t| User not found |");
-        }
-    }
-
-}
