@@ -19,7 +19,6 @@ public abstract class Consumption {
         this.userId = userId;
 
     }
-
     public Consumption() {
 
     }

@@ -5,11 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a58f9cd6-ca8e-4c2f-bb0d-d7d4f10040dd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CarboneApplication/src/services/ConsoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarboneApplication/src/services/user/UserResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarboneApplication/src/services/user/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarboneApplication/src/utils/DateChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/49ad56ad-76fb-43d3-bd18-64ca0a1fa8d0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/49ad56ad-76fb-43d3-bd18-64ca0a1fa8d0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/ConsumptionFilterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/services/ConsumptionFilterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/entities/Consumption.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/entities/Consumption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/repositories/ConsumptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/repositories/ConsumptionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/ConsumptionFilterService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/ConsumptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/services/consumption/ConsumptionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/Remote.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/services/Remote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/Remote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/services/Remote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/utils/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/utils/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/entities/Consumption.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/entities/ConsumptionType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/entities/Food.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/entities/Housing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/entities/Transport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/entities/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/repositories/ConsumptionRepository$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/repositories/ConsumptionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/repositories/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/ConsumptionFilterService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/ConsumptionService$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/ConsumptionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/Remote.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/UiElements/Loader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/UiElements/Ui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/utils/DatabaseConnection.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,35 +61,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Youcode/Documents/postgresql-42.7.4 - Copie.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Youcode/Documents/postgresql-42.7.4 - Copie.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -79,7 +106,17 @@
       <workItem from="1725521848690" duration="1067000" />
       <workItem from="1725650905748" duration="1669000" />
       <workItem from="1725652619181" duration="711000" />
-      <workItem from="1725740525113" duration="28696000" />
+      <workItem from="1725740525113" duration="28839000" />
+      <workItem from="1725867156823" duration="998000" />
+      <workItem from="1725870808402" duration="329000" />
+      <workItem from="1725873257740" duration="13000" />
+      <workItem from="1725873287941" duration="8000" />
+      <workItem from="1725874352358" duration="592000" />
+      <workItem from="1725877744114" duration="943000" />
+      <workItem from="1725890327155" duration="66000" />
+      <workItem from="1725896357233" duration="4166000" />
+      <workItem from="1725917612947" duration="63000" />
+      <workItem from="1725965812172" duration="19020000" />
     </task>
     <servers />
   </component>

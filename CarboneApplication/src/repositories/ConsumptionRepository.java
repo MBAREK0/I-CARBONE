@@ -18,21 +18,18 @@ import java.util.List;
 
 public class ConsumptionRepository {
 
-    private Connection connection;
+
 
     public ConsumptionRepository() {
-        try {
-            connection = DatabaseConnection.getConnection();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
     }
-    public void addConsumption(Consumption consumption) throws SQLException {
+    public Consumption addConsumption(Consumption consumption) throws SQLException {
+        Connection connection = DatabaseConnection.getConnection();
         String insertConsumptionSQL = "INSERT INTO Consumption (startDate, endDate, amount, consumptionImpact, consumptionType, userId) VALUES (?, ?, ?, ?, ?, ?)";
         String insertSpecificSQL = null;
 
         try {
-            // Disable auto-commit
+            // Disable auto commit for manual transaction management and rollback on error
             connection.setAutoCommit(false);
 
             try (PreparedStatement consumptionStatement = connection.prepareStatement(insertConsumptionSQL, PreparedStatement.RETURN_GENERATED_KEYS)) {
@@ -87,7 +84,7 @@ public class ConsumptionRepository {
                     }
                 }
 
-                // Commit the transaction
+
                 connection.commit();
             } catch (SQLException e) {
 
@@ -95,17 +92,22 @@ public class ConsumptionRepository {
                 throw e;
             }
         } finally {
-            // Restore auto-commit mode
+
             try {
                 connection.setAutoCommit(true);
+                DatabaseConnection.closeConnection();
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
+        return consumption;
     }
 
 
     public List<Consumption> getAllConsumptions() throws SQLException {
+
+        Connection connection = DatabaseConnection.getConnection();
         List<Consumption> consumptions = new ArrayList<>();
         String sql = "SELECT id, startDate, endDate, amount, consumptionImpact, consumptionType, userId FROM Consumption";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -123,12 +125,15 @@ public class ConsumptionRepository {
                 Consumption consumption;
                 switch (type) {
                     case FOOD:
+                        // getFoodConsumption is a private method that returns a Food object
                         consumption = getFoodConsumption(id, startDate, endDate, amount, impact, userId);
                         break;
                     case HOUSING:
+                        // getHousingConsumption is a private method that returns a Housing object
                         consumption = getHousingConsumption(id, startDate, endDate, amount, impact, userId);
                         break;
                     case TRANSPORT:
+                        // getTransportConsumption is a private method that returns a Transport object
                         consumption = getTransportConsumption(id, startDate, endDate, amount, impact, userId);
                         break;
                     default:
@@ -137,10 +142,18 @@ public class ConsumptionRepository {
                 consumptions.add(consumption);
             }
         }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            DatabaseConnection.closeConnection();
+        }
         return consumptions;
     }
 
+    // Private methods to get FOOD consumption objects
     private Food getFoodConsumption(int id, LocalDate startDate, LocalDate endDate, double amount, double impact, int userId) throws SQLException {
+        Connection connection = DatabaseConnection.getConnection();
         String sql = "SELECT typeOfFood, weight FROM Food WHERE consumptionId = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, id);
@@ -151,10 +164,17 @@ public class ConsumptionRepository {
                 return new Food(startDate, endDate, amount, ConsumptionType.FOOD, userId, typeOfFood, weight);
             }
         }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            DatabaseConnection.closeConnection();
+        }
         return null;
     }
 
     private Housing getHousingConsumption(int id, LocalDate startDate, LocalDate endDate, double amount, double impact, int userId) throws SQLException {
+        Connection connection = DatabaseConnection.getConnection();
         String sql = "SELECT energyConsumption, energyType FROM Housing WHERE consumptionId = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, id);
@@ -164,11 +184,17 @@ public class ConsumptionRepository {
                 String energyType = resultSet.getString("energyType");
                 return new Housing(startDate, endDate, amount, ConsumptionType.HOUSING, userId, energyConsumption, energyType);
             }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            DatabaseConnection.closeConnection();
         }
         return null;
     }
 
     private Transport getTransportConsumption(int id, LocalDate startDate, LocalDate endDate, double amount, double impact, int userId) throws SQLException {
+        Connection connection = DatabaseConnection.getConnection();
         String sql = "SELECT distanceTraveled, vehicleType FROM Transport WHERE consumptionId = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, id);
@@ -178,6 +204,11 @@ public class ConsumptionRepository {
                 String vehicleType = resultSet.getString("vehicleType");
                 return new Transport(startDate, endDate, amount, ConsumptionType.TRANSPORT, userId, distanceTraveled, vehicleType);
             }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            DatabaseConnection.closeConnection();
         }
         return null;
     }

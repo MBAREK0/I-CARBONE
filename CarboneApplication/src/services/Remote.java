@@ -1,6 +1,9 @@
 package services;
 
 import services.UiElements.Ui;
+import services.consumption.ConsumptionService;
+import services.user.UserService;
+
 import java.util.Scanner;
 
 
@@ -8,8 +11,8 @@ public class Remote {
      private UserService userService = new UserService();
      private Scanner scanner = new Scanner(System.in);
      private ConsumptionService consumptionService = new ConsumptionService();
+     private ConsoleService consoleService = new ConsoleService();
 
-    private ConsumptionFilterService consumptionFilterService = new ConsumptionFilterService();
     public void main() {
         boolean running = true;
         boolean isMenu = true;
@@ -53,11 +56,9 @@ public class Remote {
                     DisplayAverageConsumption();
                     break;
                 case 8:
-                    try {
+
                         findInactiveUsers();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+
 
                     break;
                 case 9:
@@ -75,6 +76,7 @@ public class Remote {
             }
 
         }
+
     }
 
     // -------------------------------------------------------------
@@ -82,16 +84,16 @@ public class Remote {
     // -------------------------------------------------------------
 
     private void createAccount() {
-        userService.addUser();
+        consoleService.addUser();
     }
     private void updateAccount() {
-        userService.updateUser();
+        consoleService.updateUser();
     }
     private void deleteAccount() {
-        userService.deleteUser();
+        consoleService.deleteUser();
          }
     public void displayUserInfo() {
-        userService.displayUserInfo();
+        consoleService.displayUserInfo();
     }
 
     // -------------------------------------------------------------
@@ -99,19 +101,19 @@ public class Remote {
     // -------------------------------------------------------------
 
     private void addCarbonConsumption() {
-        consumptionService.addConsumption();
+        consoleService.addConsumption();
     }
 
     public void filterUsers() throws Exception {
-        consumptionFilterService.filterUsers();
+        userService.printFilteredUsers();
     }
     public void DisplayAverageConsumption() {
-        consumptionService.getAndDisplayAverageConsumption();
+        consoleService.getAndDisplayAverageConsumption();
     }
 
     public void findInactiveUsers() {
         try {
-            userService.findInactiveUsers();
+            consoleService.findInactiveUsers();
         } catch (Exception e) {
             e.printStackTrace();
         }
