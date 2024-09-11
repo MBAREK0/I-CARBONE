@@ -25,4 +25,21 @@ public class DateChecker {
         return start.datesUntil(adjustedEnd)
                 .collect(Collectors.toList());
     }
+
+
+    public static Boolean isValidPeriod(LocalDate startDate, LocalDate endDate) {
+        return !startDate.isAfter(endDate);
+    }
+
+    public static Boolean isDateInPeriod(LocalDate date, LocalDate startDate, LocalDate endDate) {
+        return !date.isBefore(startDate) && !date.isAfter(endDate);
+    }
+
+    public static Boolean checkDate(LocalDate date) {
+        return date.isBefore(LocalDate.now());
+    }
+
+    public static Boolean check(String date) {
+        return isDateValid(date) && checkDate(parseDate(date));
+    }
 }

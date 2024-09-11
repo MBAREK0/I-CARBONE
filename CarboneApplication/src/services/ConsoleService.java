@@ -14,26 +14,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 import repositories.ConsumptionRepository;
-
-
-
-import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
-import repositories.ConsumptionRepository;
 import entities.Consumption;
 import entities.ConsumptionType;
 import entities.Food;
 import entities.Housing;
 import entities.Transport;
-import repositories.UserRepository;
 import entities.User;
 import utils.DateChecker;
-
-import java.util.List;
-import java.util.OptionalDouble;
-import java.time.format.DateTimeParseException;
 
 public class ConsoleService {
 
@@ -42,6 +29,7 @@ public class ConsoleService {
     private UserRepository userRepository = new UserRepository();
     private DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private ConsumptionService consumptionService = new ConsumptionService();
+    private  Boolean  isValidRecord =true;
 
 
     // -------------------------------------------------------------
@@ -147,12 +135,13 @@ public class ConsoleService {
 
         if(users.size() > 0){
             System.out.println("\n\t\tInactive users:");
-            userService.findInactiveUsers(startDate, endDate).forEach(user ->
+            users.forEach(user ->
                     System.out.println("\t\t" + user)
             );
         } else {
             System.out.println("\n\t\tNo inactive users found.");
         }
+
     }
 
     // -------------------------------------------------------------
@@ -188,6 +177,27 @@ public class ConsoleService {
 
             System.out.print("\t\tEnter End Date (yyyy-MM-dd): ");
             LocalDate endDate = LocalDate.parse(scanner.nextLine(), dateFormatter);
+
+            if(!DateChecker.isValidPeriod(startDate, endDate)) {
+                System.out.println("\t\tInvalid period. Please check your entries.");
+                return;
+            }
+
+            boolean isValidRecord = true;
+            List<Consumption> consumptions = consumptionService.getConsumptionsForUser(userId);
+
+            for (Consumption consumption : consumptions) {
+                if (consumption.getStartDate().isBefore(endDate) && consumption.getEndDate().isAfter(startDate)) {
+                    System.err.println("\t\tConsumption record overlaps with existing record.");
+                    System.err.println("\t\tPlease check your entries.");
+                    isValidRecord = false;
+                    break;
+                }
+            }
+
+            if (!isValidRecord) {
+                return;
+            }
 
             // Create the appropriate Consumption object based on the type
             Consumption consumption = null;
@@ -253,7 +263,31 @@ public class ConsoleService {
             String userCin = scanner.nextLine();
 
             // Call the method to display the average consumption
-            consumptionService.displayMoyenneConsumptionForPeriod(startDate, endDate, userCin);
+            consumptionService.displayAverageConsumptionForPeriod(startDate, endDate, userCin);
+
+        } catch (SQLException e) {
+            System.out.println("\t\tError accessing the database: " + e.getMessage());
+        } catch (DateTimeParseException e) {
+            System.out.println("\t\tInvalid date format. Please use yyyy-MM-dd.");
+        }
+    }
+
+    public void displayAverageConsumptionForPeriod(){
+        try {
+            // Get input from the user
+            System.out.print("\t\tEnter Start Date (yyyy-MM-dd): ");
+            LocalDate startDate = DateChecker.parseDate(scanner.nextLine());
+
+            System.out.print("\t\tEnter End Date (yyyy-MM-dd): ");
+            LocalDate endDate = DateChecker.parseDate(scanner.nextLine());
+
+            System.out.print("\t\tEnter User CIN: ");
+            String userCin = scanner.nextLine();
+
+            // Call the method to display the average consumption
+          double Average =  userService.displayAverageConsumptionForPeriod(startDate, endDate, userCin);
+
+            System.out.println("\t\tAverage consumption for user with CIN " + userCin + " from " + startDate + " to " + endDate + " is: " + Average);
 
         } catch (SQLException e) {
             System.out.println("\t\tError accessing the database: " + e.getMessage());
@@ -263,8 +297,35 @@ public class ConsoleService {
     }
 
 
+    public void generateUserConsumptionReport(){
+        System.out.print("\n\t\t-------------------\n");
+        System.out.print("\t\tEnter Cin of the user to display: ");
+        String cin = scanner.nextLine();
 
+        Optional user = userService.displayUserInfo(cin);
+        if (user.isPresent()){
+            System.out.println("\n\t\t"+user.get());
+        } else {
+            System.out.println("\n\t\t| User not found |");
+        }
+        System.out.print("\n\t\t-------------------\n");
+        User u =  (User) user.get();
+        try {
+            double Average =  userService.displayAverageConsumptionForPeriod(LocalDate.MIN, LocalDate.MAX, cin);
+            List<Consumption> consumptions = consumptionService.getConsumptionsForUser(u.getId());
+            if (consumptions.size() > 0) {
+                System.out.println("\n\t\tConsumption records for user with CIN " + cin + ":");
+                consumptions.forEach(consumption -> System.out.println("\t\t" + consumption));
+                System.out.println("\n\t\tAverage consumption for user with CIN " + cin + " is: " + Average);
+            } else {
+                System.out.println("\n\t\tNo consumption records found for user with CIN " + cin);
+            }
 
+        }catch (SQLException e){
+            System.out.println("\n\t\tError accessing the database: " + e.getMessage());
+        }
+
+    }
 
 
 

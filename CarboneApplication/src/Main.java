@@ -37,8 +37,7 @@ public class Main {
     }
 
     public static void remote() {
-        loading(); 
-
+        loading();
         Remote remote = new Remote();
         remote.main(); 
     }

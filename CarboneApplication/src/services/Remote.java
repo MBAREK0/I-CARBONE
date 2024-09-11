@@ -56,15 +56,17 @@ public class Remote {
                     DisplayAverageConsumption();
                     break;
                 case 8:
-
-                        findInactiveUsers();
-
-
+                    findInactiveUsers();
                     break;
                 case 9:
+                    displayAverageConsumptionForPeriod();
+                    break;
+                case 10:
                     displaySortedUsersByConsumption();
                     break;
-
+                case 11:
+                    generateUserConsumptionReport();
+                    break;
                 case 12:
                     isMenu = true;
                     break;
@@ -124,6 +126,12 @@ public class Remote {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public void displayAverageConsumptionForPeriod() {
+        consoleService.displayAverageConsumptionForPeriod();
+    }
+    public void generateUserConsumptionReport() {
+        consoleService.generateUserConsumptionReport();
     }
 
 

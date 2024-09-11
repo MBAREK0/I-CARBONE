@@ -52,11 +52,11 @@ public class Ui {
         System.out.println("\t\t|                                           << Consumption >>                                           |");
         System.out.println("\t\t|                                                                                                       |");
         System.out.println("\t\t|_______________________________________________________________________________________________________|");
-        System.out.println("\t\t|    5. Add Carbon Consumption                      |    6. Display Total Consumption for a Period      |");
+        System.out.println("\t\t|    5. Add Carbon Consumption                      |    6. Display filter Users have > 3000 kgCO2eq    |");
         System.out.println("\t\t|___________________________________________________|___________________________________________________|");
-        System.out.println("\t\t|    7. Display Daily Carbon Consumption            |    8. Display Weekly Carbon Consumption           |");
+        System.out.println("\t\t|    7. Display Average Consumption                 |    8. find Inactive Users                         |");
         System.out.println("\t\t|___________________________________________________|___________________________________________________|");
-        System.out.println("\t\t|    9. Display Monthly Carbon Consumption          |    10. Display Yearly Carbon Consumption          |");
+        System.out.println("\t\t|    9. display Average Consumption For Period      |    10. display Sorted Users By Consumption        |");
         System.out.println("\t\t|___________________________________________________|___________________________________________________|");
         System.out.println("\t\t|                                                                                                       |");
         System.out.println("\t\t|                                    11. Generate Consumption Report                                    |");

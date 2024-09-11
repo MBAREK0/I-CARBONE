@@ -50,6 +50,6 @@ public abstract class Consumption {
 
     @Override
     public String toString() {
-        return "Type: " + type + ", From: " + startDate + " To: " + endDate + ", Amount: " + amount + ", Consumption Impact: " + consumptionImpact + ", UserID: " + userId;
+        return "Type: " + type + ", From: " + startDate + " To: " + endDate + ", Amount: " + amount + ", Consumption Impact: " + calculateImpact() + ", UserID: " + userId;
     }
 }
