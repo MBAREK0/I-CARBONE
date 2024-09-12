@@ -5,38 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a58f9cd6-ca8e-4c2f-bb0d-d7d4f10040dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CarboneApplication/src/services/ConsoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarboneApplication/src/services/user/UserResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarboneApplication/src/services/user/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarboneApplication/src/utils/DateChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/49ad56ad-76fb-43d3-bd18-64ca0a1fa8d0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/49ad56ad-76fb-43d3-bd18-64ca0a1fa8d0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/entities/Consumption.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/entities/Consumption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/repositories/ConsumptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/repositories/ConsumptionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/ConsumptionFilterService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/ConsumptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/services/consumption/ConsumptionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/Remote.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/services/Remote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/utils/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/utils/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/entities/Consumption.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/entities/ConsumptionType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/entities/Food.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/entities/Housing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/entities/Transport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/entities/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/repositories/ConsumptionRepository$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/repositories/ConsumptionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/repositories/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/ConsumptionFilterService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/ConsumptionService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/ConsumptionService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/Remote.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/UiElements/Loader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/UiElements/Ui.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/utils/DatabaseConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/ConsoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/services/ConsoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarboneApplication/src/services/consumption/ConsumptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarboneApplication/src/services/consumption/ConsumptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/ConsoleService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/services/ConsoleService$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/ConsoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/services/ConsoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/Remote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/services/Remote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/UiElements/Ui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/services/UiElements/Ui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/consumption/ConsumptionFilterService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/consumption/ConsumptionResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/consumption/ConsumptionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/services/consumption/ConsumptionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/services/user/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/services/user/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GreenPulse/utils/DateChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GreenPulse/utils/DateChecker.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +98,12 @@
       <workItem from="1725890327155" duration="66000" />
       <workItem from="1725896357233" duration="4166000" />
       <workItem from="1725917612947" duration="63000" />
-      <workItem from="1725965812172" duration="19020000" />
+      <workItem from="1725965812172" duration="19101000" />
+      <workItem from="1726042735406" duration="3413000" />
+      <workItem from="1726070028167" duration="12275000" />
+      <workItem from="1726133697230" duration="34000" />
+      <workItem from="1726155980217" duration="703000" />
+      <workItem from="1726167376007" duration="1344000" />
     </task>
     <servers />
   </component>

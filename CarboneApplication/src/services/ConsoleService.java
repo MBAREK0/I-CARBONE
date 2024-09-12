@@ -184,7 +184,7 @@ public class ConsoleService {
             }
 
             boolean isValidRecord = true;
-            List<Consumption> consumptions = consumptionService.getConsumptionsForUser(userId);
+            List<Consumption> consumptions = consumptionService.getConsumptionsForUserByType(userId, type.toString());
 
             for (Consumption consumption : consumptions) {
                 if (consumption.getStartDate().isBefore(endDate) && consumption.getEndDate().isAfter(startDate)) {

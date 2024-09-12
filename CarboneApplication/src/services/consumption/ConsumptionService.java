@@ -34,13 +34,17 @@ public class ConsumptionService {
     /**
      * Add a new consumption to the database
      */
-    public List<Consumption> getConsumptionsInPeriod(LocalDate startDate, LocalDate endDate,int userId) throws SQLException{
+    public List<Consumption> getConsumptionsInPeriod(LocalDate startDate, LocalDate endDate, int userId) throws SQLException {
         List<Consumption> consumptions = consumptionRepository.getAllConsumptions();
         return consumptions.stream()
-                .filter(consumption -> !consumption.getStartDate().isBefore(startDate) && !consumption.getEndDate().isAfter(endDate))
+                .filter(consumption ->
+                        (consumption.getStartDate().isBefore(endDate) || consumption.getStartDate().isEqual(endDate)) &&
+                                (consumption.getEndDate().isAfter(startDate) || consumption.getEndDate().isEqual(startDate))
+                )
                 .filter(consumption -> consumption.getUserId() == userId)
                 .collect(Collectors.toList());
     }
+
 
     /**
      * Get the sum of consumptions impact in the specified period
@@ -97,6 +101,11 @@ public class ConsumptionService {
                 .filter(consumption -> consumption.getUserId() == userId)
                 .collect(Collectors.toList());
     }
-
+    public List<Consumption> getConsumptionsForUserByType(int userId,String type) throws SQLException {
+        return consumptionRepository.getAllConsumptions().stream()
+                .filter(consumption -> consumption.getUserId() == userId)
+                .filter(consumption -> consumption.getType().toString().equals(type))
+                .collect(Collectors.toList());
+    }
 
 }
