@@ -36,7 +36,7 @@ public class Food extends Consumption {
     @Override
     public double calculateImpact() {
         double impactPerWeight = (typeOfFood.equals("MEAT") ? 5.0 : 0.5);
-        return impactPerWeight * weight * getAmount();
+        return impactPerWeight * weight * super.getAmount();
     }
 
 }

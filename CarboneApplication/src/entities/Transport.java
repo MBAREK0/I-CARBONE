@@ -24,6 +24,6 @@ public class Transport extends Consumption {
     @Override
     public double calculateImpact() {
         double impactPerDistance = (vehicleType.equals("CAR") ? 0.5 : 0.1);
-        return impactPerDistance * distanceTraveled * getAmount();
+        return impactPerDistance * distanceTraveled * super.getAmount();
     }
 }

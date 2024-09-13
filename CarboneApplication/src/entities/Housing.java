@@ -24,6 +24,6 @@ public class Housing extends Consumption {
     @Override
     public double calculateImpact() {
         double impactPerEnergy = (energyType.equals("ELECTRICITY") ? 1.5 : 2.0);
-        return impactPerEnergy * energyConsumption * getAmount();
+        return impactPerEnergy * energyConsumption * super.getAmount();
     }
 }
