@@ -1,7 +1,7 @@
 package repositories;
 
 import entities.Consumption;
-import utils.DatabaseConnection;
+import dataBase.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

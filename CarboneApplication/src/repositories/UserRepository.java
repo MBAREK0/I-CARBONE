@@ -1,7 +1,7 @@
 package repositories;
 
 import entities.User;
-import utils.DatabaseConnection;
+import dataBase.DatabaseConnection;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
